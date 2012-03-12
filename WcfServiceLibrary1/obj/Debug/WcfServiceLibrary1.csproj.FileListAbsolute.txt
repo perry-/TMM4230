@@ -1,0 +1,6 @@
+c:\users\perry\documents\visual studio 2010\Projects\WindowsFormsApplication2\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.dll.config
+c:\users\perry\documents\visual studio 2010\Projects\WindowsFormsApplication2\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.dll
+c:\users\perry\documents\visual studio 2010\Projects\WindowsFormsApplication2\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.pdb
+c:\users\perry\documents\visual studio 2010\Projects\WindowsFormsApplication2\WcfServiceLibrary1\obj\Debug\ResolveAssemblyReference.cache
+c:\users\perry\documents\visual studio 2010\Projects\WindowsFormsApplication2\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.dll
+c:\users\perry\documents\visual studio 2010\Projects\WindowsFormsApplication2\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.pdb
