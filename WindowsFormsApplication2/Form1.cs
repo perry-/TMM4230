@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using WindowsFormsApplication2.PersonServiceReference;
 
 namespace WindowsFormsApplication2
 {
@@ -41,11 +42,30 @@ namespace WindowsFormsApplication2
             etternavn = etternavnBox.Text;
             alder = alderBox.Text;
 
-            MessageBox.Show("Fornavn: " + fornavn +
+            bool result = Search(fornavn, etternavn);
+
+            if(result == true)
+            {
+                MessageBox.Show("Person eksisterer i listen");
+            }
+            else
+            {
+                MessageBox.Show("Person eksisterer ikke i listen");
+            }
+            
+            /*MessageBox.Show("Fornavn: " + fornavn +
                         "\n" + "Etternavn: " + etternavn +
                         "\n" + "Alder: " + alder, "Resultat",
-                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBoxButtons.OK, MessageBoxIcon.Asterisk);*/
 
+        }
+
+        private bool Search(string f, string e)
+        {
+            PersonServiceClient client = new PersonServiceClient();
+            bool result = client.Search(f, e);
+            client.Close();
+            return result;
         }
     }
 }
