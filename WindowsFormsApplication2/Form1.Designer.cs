@@ -35,6 +35,7 @@
             this.etternavnBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.Resultslist = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // fornavnBox
@@ -95,11 +96,20 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Fornavn";
             // 
+            // Resultslist
+            // 
+            this.Resultslist.FormattingEnabled = true;
+            this.Resultslist.Location = new System.Drawing.Point(15, 63);
+            this.Resultslist.Name = "Resultslist";
+            this.Resultslist.Size = new System.Drawing.Size(249, 225);
+            this.Resultslist.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 67);
+            this.ClientSize = new System.Drawing.Size(357, 301);
+            this.Controls.Add(this.Resultslist);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -123,6 +133,7 @@
         private System.Windows.Forms.TextBox etternavnBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox Resultslist;
     }
 }
 

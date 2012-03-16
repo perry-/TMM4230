@@ -11,27 +11,25 @@ namespace WcfServiceLibrary1
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "PersonService" in both code and config file together.
     public class PersonService : IPersonService
     {
-        
-
-        public int Add(int a, int b)
-        {
-            return a + b;
-        }
-
-        public bool Search(string fornavn, string etternavn)
+        public ArrayList Search(string firstName, string lastName, int age)
         {
             ArrayList people = new ArrayList();
-            people.Add("Alexander");
+            ArrayList results = new ArrayList();
+            people.Add(new Person("Alexander", "Perry", 22));
+            people.Add(new Person("Alexander", "Jensen", 34));
+            people.Add(new Person("Jens", "Perry", 12));
+            people.Add(new Person("Renate", "Jensen", 12));
 
-            foreach (string person in people)
+            foreach (Person person in people)
             {
-                if(fornavn.ToLower().IndexOf(person.ToLower()) != -1)
+                if((firstName.ToLower().IndexOf(person.FirstName.ToLower()) != -1) || (lastName.ToLower().IndexOf(person.LastName.ToLower()) != -1))
                 {
-                    return true;
+                    results.Add(person);
+                    return results;
                 }
             }
 
-            return false;
+            return null;
         }
     }
 }

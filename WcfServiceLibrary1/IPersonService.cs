@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,9 +13,6 @@ namespace WcfServiceLibrary1
     public interface IPersonService
     {
         [OperationContract]
-        int Add(int a, int b);
-
-        [OperationContract]
-        bool Search(string fornavn, string etternavn);
+        ArrayList Search(string firstName, string lastName, int age);
     }
 }
