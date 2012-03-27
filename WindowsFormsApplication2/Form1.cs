@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.ServiceModel;
-using System.Text;
 using System.Windows.Forms;
 using WcfServiceLibrary1;
 using WindowsFormsApplication2.PersonServiceReference;
@@ -18,40 +11,43 @@ namespace WindowsFormsApplication2
         public Form1()
         {
             InitializeComponent();
-            fornavnBox.KeyDown += OnKeyDownHandler;
-            etternavnBox.KeyDown += OnKeyDownHandler;
-            alderBox.KeyDown += OnKeyDownHandler;
+            firstNameBox.KeyDown += OnKeyDownHandler;
+            lastNameBox.KeyDown += OnKeyDownHandler;
+            ageBox.KeyDown += OnKeyDownHandler;
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void SearchBtn_Click(object sender, EventArgs e)
         {
-            ShowResults();
+            ShowResults(firstNameBox.Text, lastNameBox.Text, ageBox.Text);
+        }
+
+
+        private void ShowAllBtn_Click(object sender, EventArgs e)
+        {
+            ShowResults("", "", "");
         }
 
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                ShowResults();
+                ShowResults(firstNameBox.Text, lastNameBox.Text, ageBox.Text);
             }
         }
 
 
-        private void ShowResults()
+        private void ShowResults(string firstName, string lastName, string age)
         {
-            string fornavn, etternavn;
-            int alder;
-            fornavn = fornavnBox.Text;
-            etternavn = etternavnBox.Text;
-            alder = 0;
+            int ageInt = 0;
 
-            if(alderBox.Text != "")
+            if(!age.Equals(""))
             {
-                alder = Convert.ToInt32(alderBox.Text);
+                ageInt = Convert.ToInt32(age);
             }
 
-            ArrayList result = Search(fornavn, etternavn, alder);
+            List<Person> result = Search(firstName, lastName, ageInt);
+            Resultslist.Items.Clear();
 
             if (result != null)
             {
@@ -65,15 +61,18 @@ namespace WindowsFormsApplication2
             }
         }
 
-        private ArrayList Search(string f, string e, int a)
+        private List<Person> Search(string f, string e, int a)
         {
                 PersonServiceClient client = new PersonServiceClient();
-                ArrayList result = client.Search(f, e, a);
+                List<Person> result = client.Search(f, e, a);
                 client.Close();
                 return result;
-
-            
             
         }
+
+        
+
+        
+
     }
 }

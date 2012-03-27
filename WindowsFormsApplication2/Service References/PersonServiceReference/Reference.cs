@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Collections;
+using System.Collections.Generic;
 using WcfServiceLibrary1;
 
 namespace WindowsFormsApplication2.PersonServiceReference {
@@ -22,7 +22,7 @@ namespace WindowsFormsApplication2.PersonServiceReference {
         int Add(int a, int b);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonService/Search", ReplyAction="http://tempuri.org/IPersonService/SearchResponse")]
-        ArrayList Search(string firstName, string lastName, int age);
+        List<Person> Search(string firstName, string lastName, int age);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -56,7 +56,7 @@ namespace WindowsFormsApplication2.PersonServiceReference {
             return base.Channel.Add(a, b);
         }
         
-        public ArrayList Search(string firstName, string lastName, int age) {
+        public List<Person> Search(string firstName, string lastName, int age) {
             return base.Channel.Search(firstName, lastName, age);
         }
     }

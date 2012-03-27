@@ -28,29 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fornavnBox = new System.Windows.Forms.TextBox();
-            this.alderBox = new System.Windows.Forms.TextBox();
+            this.firstNameBox = new System.Windows.Forms.TextBox();
+            this.ageBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.etternavnBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lastNameBox = new System.Windows.Forms.TextBox();
+            this.SearchBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Resultslist = new System.Windows.Forms.ListBox();
+            this.ShowAllBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // fornavnBox
+            // firstNameBox
             // 
-            this.fornavnBox.Location = new System.Drawing.Point(13, 37);
-            this.fornavnBox.Name = "fornavnBox";
-            this.fornavnBox.Size = new System.Drawing.Size(100, 20);
-            this.fornavnBox.TabIndex = 0;
+            this.firstNameBox.Location = new System.Drawing.Point(13, 37);
+            this.firstNameBox.Name = "firstNameBox";
+            this.firstNameBox.Size = new System.Drawing.Size(100, 20);
+            this.firstNameBox.TabIndex = 0;
             // 
-            // alderBox
+            // ageBox
             // 
-            this.alderBox.Location = new System.Drawing.Point(225, 37);
-            this.alderBox.Name = "alderBox";
-            this.alderBox.Size = new System.Drawing.Size(39, 20);
-            this.alderBox.TabIndex = 2;
+            this.ageBox.Location = new System.Drawing.Point(225, 37);
+            this.ageBox.Name = "ageBox";
+            this.ageBox.Size = new System.Drawing.Size(39, 20);
+            this.ageBox.TabIndex = 2;
             // 
             // label2
             // 
@@ -70,22 +71,22 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Etternavn";
             // 
-            // etternavnBox
+            // lastNameBox
             // 
-            this.etternavnBox.Location = new System.Drawing.Point(119, 37);
-            this.etternavnBox.Name = "etternavnBox";
-            this.etternavnBox.Size = new System.Drawing.Size(100, 20);
-            this.etternavnBox.TabIndex = 1;
+            this.lastNameBox.Location = new System.Drawing.Point(119, 37);
+            this.lastNameBox.Name = "lastNameBox";
+            this.lastNameBox.Size = new System.Drawing.Size(100, 20);
+            this.lastNameBox.TabIndex = 1;
             // 
-            // button1
+            // SearchBtn
             // 
-            this.button1.Location = new System.Drawing.Point(270, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 20);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Søk!";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SearchBtn.Location = new System.Drawing.Point(270, 37);
+            this.SearchBtn.Name = "SearchBtn";
+            this.SearchBtn.Size = new System.Drawing.Size(75, 20);
+            this.SearchBtn.TabIndex = 3;
+            this.SearchBtn.Text = "Søk!";
+            this.SearchBtn.UseVisualStyleBackColor = true;
+            this.SearchBtn.Click += new System.EventHandler(this.SearchBtn_Click);
             // 
             // label1
             // 
@@ -104,19 +105,30 @@
             this.Resultslist.Size = new System.Drawing.Size(249, 225);
             this.Resultslist.TabIndex = 8;
             // 
+            // ShowAllBtn
+            // 
+            this.ShowAllBtn.Location = new System.Drawing.Point(271, 64);
+            this.ShowAllBtn.Name = "ShowAllBtn";
+            this.ShowAllBtn.Size = new System.Drawing.Size(75, 23);
+            this.ShowAllBtn.TabIndex = 9;
+            this.ShowAllBtn.Text = "Vis alle!";
+            this.ShowAllBtn.UseVisualStyleBackColor = true;
+            this.ShowAllBtn.Click += new System.EventHandler(this.ShowAllBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(357, 301);
+            this.Controls.Add(this.ShowAllBtn);
             this.Controls.Add(this.Resultslist);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SearchBtn);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.etternavnBox);
+            this.Controls.Add(this.lastNameBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.alderBox);
-            this.Controls.Add(this.fornavnBox);
+            this.Controls.Add(this.ageBox);
+            this.Controls.Add(this.firstNameBox);
             this.Name = "Form1";
             this.Text = "Personsøk";
             this.ResumeLayout(false);
@@ -126,14 +138,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox fornavnBox;
-        private System.Windows.Forms.TextBox alderBox;
+        private System.Windows.Forms.TextBox firstNameBox;
+        private System.Windows.Forms.TextBox ageBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox etternavnBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox lastNameBox;
+        private System.Windows.Forms.Button SearchBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox Resultslist;
+        private System.Windows.Forms.Button ShowAllBtn;
     }
 }
 

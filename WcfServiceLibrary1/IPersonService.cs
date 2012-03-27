@@ -13,6 +13,6 @@ namespace WcfServiceLibrary1
     public interface IPersonService
     {
         [OperationContract]
-        ArrayList Search(string firstName, string lastName, int age);
+        List<Person> Search(string firstName, string lastName, int age);
     }
 }
